@@ -5,7 +5,7 @@
 #include <sstream>
 #include <cstring>
 
-#include <libxmlmm.h>
+#include "libxmlmm.h"
 
 #include "../../include/dbcppp/Network.h"
 

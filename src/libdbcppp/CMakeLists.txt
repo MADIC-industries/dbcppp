@@ -2,15 +2,17 @@
 include(GNUInstallDirs)
 include(TestBigEndian)
 
-add_library(${PROJECT_NAME} SHARED "")
+add_library(${PROJECT_NAME} "")
+set_target_properties(${PROJECT_NAME} PROPERTIES SOVERSION ${PROJECT_VERSION})
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)
 
-target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${LIBXML2_LIBRARIES} "libxmlmm")
+target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${LIBXML2_LIBRARIES} libxmlmm)
 
 add_compile_definitions(DBCPPP_EXPORT)
 
 include_directories(
     ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_SOURCE_DIR}/include/
     ${CMAKE_BINARY_DIR}/src
 )
 
@@ -39,7 +41,7 @@ file(GLOB src
 )
 
 target_sources(${PROJECT_NAME}
-    PRIVATE ${header} 
+    PRIVATE ${header}
     PRIVATE ${header_interface}
     PRIVATE ${src} DBCX3AdaptStructs.inl
 )
@@ -57,7 +59,7 @@ install(
     FILES
     $<TARGET_PROPERTY:${PROJECT_NAME},INTERFACE_SOURCES>
 	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/dbcppp)
-	
+
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
   "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake"
@@ -89,3 +91,12 @@ install(
   COMPONENT
     Devel
 )
+
+set(prefix      ${CMAKE_INSTALL_PREFIX})
+set(exec_prefix ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR})
+set(includedir  ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR})
+set(libdir      ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR})
+
+configure_file(libdbcppp.pc.in ${CMAKE_BINARY_DIR}/libdbcppp.pc @ONLY)
+# Install pkg-config files
+install(FILES ${CMAKE_BINARY_DIR}/libdbcppp.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
