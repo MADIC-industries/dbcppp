@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "../../include/dbcppp/Network2Functions.h"
 #include "NetworkImpl.h"
 

@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <regex>
 #include <array>
 #include <string>

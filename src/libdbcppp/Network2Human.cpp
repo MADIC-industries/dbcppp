@@ -1,4 +1,5 @@
 
+#include <algorithm>
 #include <boost/format.hpp>
 #include "../../include/dbcppp/Network2Functions.h"
 
