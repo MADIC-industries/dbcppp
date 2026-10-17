@@ -1,4 +1,5 @@
 
+#include <optional>
 #include <boost/spirit/home/x3.hpp>
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <boost/spirit/home/x3/support/utility/error_reporting.hpp>

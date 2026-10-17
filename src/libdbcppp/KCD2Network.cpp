@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include <map>
 #include <memory>
 #include <vector>

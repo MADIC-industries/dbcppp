@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+#include <memory>
 #include "../../include/dbcppp/EnvironmentVariable.h"
 #include "NodeImpl.h"
 #include "AttributeImpl.h"

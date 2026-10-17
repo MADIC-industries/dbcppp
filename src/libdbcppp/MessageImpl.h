@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+#include <memory>
 #include "../../include/dbcppp/Message.h"
 #include "SignalImpl.h"
 #include "NodeImpl.h"

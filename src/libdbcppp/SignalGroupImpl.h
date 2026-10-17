@@ -1,6 +1,8 @@
 
 #pragma once
 
+#include <cstdint>
+#include <memory>
 #include <dbcppp/SignalGroup.h>
 
 namespace dbcppp

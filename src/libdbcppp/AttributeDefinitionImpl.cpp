@@ -1,3 +1,4 @@
+#include <memory>
 #include <algorithm>
 #include <iostream>
 #include "AttributeDefinitionImpl.h"

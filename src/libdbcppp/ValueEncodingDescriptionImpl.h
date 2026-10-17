@@ -1,6 +1,8 @@
 
 #pragma once
 
+#include <cstdint>
+#include <memory>
 #include <string>
 #include <dbcppp/ValueEncodingDescription.h>
 

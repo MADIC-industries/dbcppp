@@ -1,4 +1,5 @@
 
+#include <memory>
 #include "ValueEncodingDescriptionImpl.h"
 
 using namespace dbcppp;
